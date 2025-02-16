@@ -1,0 +1,3 @@
+export SERVICE_NAME="chia-node-mainnet"
+export VALUES_PATH="./chia-node"
+export CI_NAMESPACE="infrastructure"

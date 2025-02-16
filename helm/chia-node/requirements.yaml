@@ -1,0 +1,4 @@
+dependencies:
+- name: chia-blockchain
+  version: ~0.5.1
+  repository: "file://helm-charts/charts/chia-blockchain"

@@ -1,0 +1,5 @@
+---
+chia-blockchain:
+  replicaCount: 1
+  chia:
+    hostname: 0.0.0.0
