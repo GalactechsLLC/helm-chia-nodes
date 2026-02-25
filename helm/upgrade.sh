@@ -28,6 +28,12 @@ if [ -z "$VALUES_PATH" ]; then
     exit 1
 fi
 
+# Verify we have environment suffix for values override file
+if [ -z "$CI_ENVIRONMENT" ]; then
+    echo "CI_ENVIRONMENT Not set (expected values-\$CI_ENVIRONMENT.yaml)"
+    exit 1
+fi
+
 echo Service Name: $SERVICE_NAME
 echo Values Path: $VALUES_PATH
 echo Service Location: `pwd`

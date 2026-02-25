@@ -1,7 +1,7 @@
 # CHIA BUILD STEP
-FROM python:3.9-slim AS chia_build
+FROM python:3.13-slim AS chia_build
 
-ARG BRANCH="release/2.5.1"
+ARG BRANCH="2.6.0"
 ARG COMMIT=""
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
@@ -19,11 +19,12 @@ RUN echo "cloning ${BRANCH}" && \
 FROM mikefarah/yq:4 AS yq
 
 # IMAGE BUILD
-FROM python:3.9-slim AS chia_node
+FROM python:3.13-slim AS chia_node
 
 EXPOSE 8555 8444
 
 ENV CHIA_ROOT=/chia-data
+ENV CHIA_PREFER_IPV6=false
 ENV service="node"
 ENV testnet="false"
 ENV network="mainnet"

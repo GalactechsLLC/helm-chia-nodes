@@ -1,5 +1,23 @@
 ---
 chia-blockchain:
   replicaCount: 1
+  image:
+    repository: chianetwork/chia-docker #Change to your built docker image url
+    pullPolicy: Always
+    tag: latest #Change to your built docker image tag
+  imagePullSecrets: []
+  nameOverride: "" #This will be used as the deployment name
+  fullnameOverride: "" #This will be used as the deployment name
+  volume:
+    storageClassName: '' #Use whatever storage class you want, SSD or better
+    size: 500Gi
   chia:
     hostname: 0.0.0.0
+    log_level: INFO
+    testnet: "false"
+    network: "mainnet"
+    ca:
+      private_ca_crt: |
+        #Paste your CA cert here
+      private_ca_key: |
+        #Paste your CA key here

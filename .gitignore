@@ -1,3 +1,6 @@
 /target
+helm/chia-node/charts/*.tgz
 values-*.yaml
+!values-example.yaml
+Chart.lock
 .idea
