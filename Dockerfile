@@ -1,7 +1,7 @@
 # CHIA BUILD STEP
 FROM python:3.13-slim AS chia_build
 
-ARG BRANCH="2.6.0"
+ARG BRANCH="2.7.0"
 ARG COMMIT=""
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
