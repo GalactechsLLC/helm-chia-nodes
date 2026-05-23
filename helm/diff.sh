@@ -39,7 +39,14 @@ echo Values Name: $VALUES_PATH
 echo Service Location: `pwd`
 echo Using Context: `kubectl config current-context`
 
-read -r -p "Is the Above Correct? [y/N] " input
+if [[ "${CI_ASSUME_YES:-false}" == "true" ]]; then
+    input="y"
+elif [[ -t 0 ]]; then
+    read -r -p "Is the Above Correct? [y/N] " input
+else
+    echo "Non-interactive shell detected. Set CI_ASSUME_YES=true to proceed."
+    unset_and_exit
+fi
 
 case $input in
       [yY][eE][sS]|[yY])

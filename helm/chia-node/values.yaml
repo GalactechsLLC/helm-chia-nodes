@@ -16,6 +16,11 @@ chia-blockchain:
     log_level: INFO
     testnet: "false"
     network: "mainnet"
+    env: {}
+#      mainnet_checkpoint_url: https://torrents.chia.net/databases/mainnet/mainnet.2026-01-01.tar.gz.torrent
+#      mainnet_checkpoint_archive: mainnet.2026-01-01.tar.gz
+#      testnet_checkpoint_url: https://torrents.chia.net/databases/testnet11/testnet11.2026-01-01.tar.gz.torrent
+#      testnet_checkpoint_archive: testnet11.2026-01-01.tar.gz
     ca:
       private_ca_crt: |
         #Paste your CA cert here
