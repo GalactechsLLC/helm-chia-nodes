@@ -126,10 +126,10 @@ The default checkpoint URLs can be overridden through chart env values:
 chia-blockchain:
   chia:
     env:
-      mainnet_checkpoint_url: https://torrents.chia.net/databases/mainnet/mainnet.2026-01-01.tar.gz.torrent
-      mainnet_checkpoint_archive: mainnet.2026-01-01.tar.gz
-      testnet_checkpoint_url: https://torrents.chia.net/databases/testnet11/testnet11.2026-01-01.tar.gz.torrent
-      testnet_checkpoint_archive: testnet11.2026-01-01.tar.gz
+      mainnet_checkpoint_url: https://torrents.chia.net/databases/mainnet/mainnet.2026-04-01.tar.gz.torrent
+      mainnet_checkpoint_archive: mainnet.2026-04-01.tar.gz
+      testnet_checkpoint_url: https://torrents.chia.net/databases/testnet11/testnet11.2026-04-01.tar.gz.torrent
+      testnet_checkpoint_archive: testnet11.2026-04-01.tar.gz
 ```
 
 If the archive name is the torrent URL basename without `.torrent`, the `*_checkpoint_archive` value can be omitted.
