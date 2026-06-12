@@ -61,13 +61,13 @@ if [[ ${use_checkpoint} == 'true' ]]; then
     if [[ $file_size -le 1048576 ]]; then
       cd "${CHIA_ROOT}/db/" || exit
       echo "Starting Download of Testnet 11 DB"
-      aria2c --seed-time=0 --dir=. https://torrents.chia.net/databases/testnet11/testnet11.2026-01-01.tar.gz.torrent
+      aria2c --seed-time=0 --dir=. https://torrents.chia.net/databases/testnet11/testnet11.2026-04-01.tar.gz.torrent
       echo "Extracting DB"
-      tar -xzvf testnet11.2026-01-01.tar.gz
+      tar -xzvf testnet11.2026-04-01.tar.gz
       ls -la
       echo "Deleting Old Download DB"
-      rm testnet11.2026-01-01.tar.gz
-      rm testnet11.2026-01-01.tar.gz.torrent
+      rm testnet11.2026-04-01.tar.gz
+      rm testnet11.2026-04-01.tar.gz.torrent
       cd /chia-blockchain || exit 1
     fi
   else
@@ -76,12 +76,12 @@ if [[ ${use_checkpoint} == 'true' ]]; then
     if [[ $file_size -le 1048576 ]]; then
       cd "${CHIA_ROOT}/db/" || exit
       echo "Starting Download of Mainnet DB"
-      aria2c --seed-time=0 --dir=. https://torrents.chia.net/databases/mainnet/mainnet.2026-01-01.tar.gz.torrent
+      aria2c --seed-time=0 --dir=. https://torrents.chia.net/databases/mainnet/mainnet.2026-04-01.tar.gz.torrent
       echo "Extracting DB"
-      tar -xzvf mainnet.2026-01-01.tar.gz
+      tar -xzvf mainnet.2026-04-01.tar.gz
       ls -la
-      rm mainnet.2026-01-01.tar.gz
-      rm mainnet.2026-01-01.tar.gz.torrent
+      rm mainnet.2026-04-01.tar.gz
+      rm mainnet.2026-04-01.tar.gz.torrent
       cd /chia-blockchain || exit 1
     fi
   fi
