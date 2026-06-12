@@ -120,6 +120,20 @@ On startup, entrypoint checks existing DB size in `${CHIA_ROOT}/db`:
 
 If DB is considered too small, it downloads a prebuilt compressed DB snapshot torrent from `torrents.chia.net`, extracts it into `${CHIA_ROOT}/db`, and starts from that checkpoint instead of syncing from genesis. This significantly reduces initial sync time.
 
+The default checkpoint URLs can be overridden through chart env values:
+
+```yaml
+chia-blockchain:
+  chia:
+    env:
+      mainnet_checkpoint_url: https://torrents.chia.net/databases/mainnet/mainnet.2026-01-01.tar.gz.torrent
+      mainnet_checkpoint_archive: mainnet.2026-01-01.tar.gz
+      testnet_checkpoint_url: https://torrents.chia.net/databases/testnet11/testnet11.2026-01-01.tar.gz.torrent
+      testnet_checkpoint_archive: testnet11.2026-01-01.tar.gz
+```
+
+If the archive name is the torrent URL basename without `.torrent`, the `*_checkpoint_archive` value can be omitted.
+
 ## Values and env wiring
 
 - Base chart values: `helm/chia-node/values.yaml`
@@ -130,6 +144,7 @@ If DB is considered too small, it downloads a prebuilt compressed DB snapshot to
   - `VALUES_PATH`
   - `CI_NAMESPACE`
   - `CI_ENVIRONMENT` (needed by `diff.sh`/`upgrade.sh`)
+- `diff.sh`, `upgrade.sh`, and `update-chart.sh` prompt for confirmation in interactive shells. In CI or other non-interactive shells, set `CI_ASSUME_YES=true` to proceed.
 
 ## Troubleshooting tips
 
